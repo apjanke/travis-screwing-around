@@ -23,6 +23,7 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew doctor; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ls -l /Applications; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt list --installed; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then dpkg --get-selections | grep -v deinstall; fi
   - which gcc
@@ -33,3 +34,4 @@ script:
   - env
   - mount
   - df -h
+  - find .
