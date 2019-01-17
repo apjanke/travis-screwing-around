@@ -28,6 +28,7 @@ script:
   - which gcc
   - gcc --version
   - which tex
+  - tex --version
   - ls -l $(which tex)
   - env
   - mount
