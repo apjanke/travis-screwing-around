@@ -10,6 +10,8 @@ addons:
   apt:
     packages:
       - texlive
+      - qttools5-dev-tools
+      - qt5-default
 
 # Don't uncomment this unless you want to spend ten extra minutes on
 # every build.
@@ -49,3 +51,6 @@ script:
   - mount
   - df -h
   - pwd
+  - qhelpgenerator -version
+  - qhelpgenerator -qt5 -version
+  - qtchooser -list-versions
