@@ -2,11 +2,6 @@ language: c
 
 latex: true
 
-os:
-  - linux
-  - osx
-dist: xenial
-
 notifications:
   webhooks: https://www.travisbuddy.com/
   on_success: never
@@ -39,8 +34,7 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew doctor; fi
   # Don't bother brew updating; takes too long.
-  #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
-  #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt list --installed; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - which gcc
   - gcc --version
   - which tex
