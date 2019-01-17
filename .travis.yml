@@ -7,6 +7,10 @@ os:
   - osx
 dist: xenial
 
+notifications:
+  webhooks: https://www.travisbuddy.com/
+  on_success: never
+
 # addons:
 #   apt:
 #     packages:
