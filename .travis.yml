@@ -11,13 +11,10 @@ notifications:
   webhooks: https://www.travisbuddy.com/
   on_success: never
 
-# addons:
-#   apt:
-#     packages:
-#       - texlive
-#       - octave
-#       - qttools5-dev-tools
-#       - libqt5sql5-sqlite
+addons:
+  apt:
+    packages:
+      - texlive
 
 # addons:
 #   homebrew:
@@ -41,7 +38,8 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew config; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew doctor; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+  # Don't bother brew updating; takes too long.
+  #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt list --installed; fi
   - which gcc
   - gcc --version
