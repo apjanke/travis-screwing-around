@@ -51,6 +51,7 @@ script:
   - mount
   - df -h
   - pwd
-  - qhelpgenerator -version
-  - qhelpgenerator -qt5 -version
+  - qhelpgenerator -qt5
+  - qhelpgenerator -v
+  - qhelpgenerator -qt5 -v
   - qtchooser -list-versions
