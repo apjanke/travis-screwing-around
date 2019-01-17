@@ -30,3 +30,5 @@ script:
   - which tex
   - ls -l $(which tex)
   - env
+  - mount
+  - df -h
