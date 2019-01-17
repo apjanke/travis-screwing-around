@@ -1,9 +1,24 @@
+language: c
+
 latex: true
 
 os:
   - linux
   - osx
 dist: xenial
+
+addons:
+  apt:
+    packages:
+      - texlive
+      - octave
+      - qttools5-dev-tools
+      - libqt5sql5-sqlite
+      
+addons:
+  homebrew:
+    casks:
+      - mactex
 
 matrix:
   include:
@@ -25,7 +40,6 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ls -l /Applications; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt list --installed; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then dpkg --get-selections | grep -v deinstall; fi
   - which gcc
   - gcc --version
   - which tex
@@ -34,6 +48,4 @@ script:
   - env
   - mount
   - df -h
-  - find .
-  - find /usr/local
-  
+  - pwd
