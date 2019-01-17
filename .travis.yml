@@ -11,6 +11,8 @@ addons:
     packages:
       - texlive
 
+# Don't uncomment this unless you want to spend ten extra minutes on
+# every build.
 # addons:
 #   homebrew:
 #     casks:
