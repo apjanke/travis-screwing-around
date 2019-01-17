@@ -27,3 +27,4 @@ script:
   - gcc --version
   - which tex
   - ls -l $(which tex)
+  - env
