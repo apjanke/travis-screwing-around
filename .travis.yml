@@ -35,3 +35,5 @@ script:
   - mount
   - df -h
   - find .
+  - find /usr/local
+  
