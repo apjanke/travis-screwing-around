@@ -41,12 +41,12 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - which gcc
   - gcc --version
-  - which tex
+  - which tex; true
   - if which tex; then ls -l $(which tex); fi
-  - tex --version && true
-  - which latex && true
+  - tex --version; true
+  - which latex; true
   - if which latex; then ls -l $(which tex); fi
-  - latex --version && true
+  - latex --version; true
   - env
   - mount
   - df -h
