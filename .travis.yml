@@ -12,8 +12,6 @@ addons:
       - texlive
       - qttools5-dev-tools
       - qt5-default
-
-addons:
   homebrew:
     packages:
       - qt
@@ -21,7 +19,6 @@ addons:
       # Don't uncomment this unless you want to spend ten extra minutes on
       # every build.
       - mactex
-
 
 matrix:
   include:
