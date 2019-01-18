@@ -53,5 +53,8 @@ script:
   - mount
   - df -h
   - pwd
-  - qhelpgenerator -qt5 -v
+  - qhelpgenerator -qt5 -v; true
+  - qhelpgenerator -v; true
+  - qcollectiongenerator -qt5 -v; true
+  - qcollectiongenerator -v; true
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then qtchooser -list-versions; fi
