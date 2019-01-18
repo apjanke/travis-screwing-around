@@ -13,12 +13,15 @@ addons:
       - qttools5-dev-tools
       - qt5-default
 
-# Don't uncomment this unless you want to spend ten extra minutes on
-# every build.
-# addons:
-#   homebrew:
-#     casks:
-#       - mactex
+addons:
+  homebrew:
+    packages:
+      - qt
+    casks:
+      # Don't uncomment this unless you want to spend ten extra minutes on
+      # every build.
+      - mactex
+
 
 matrix:
   include:
@@ -42,16 +45,14 @@ script:
   - which gcc
   - gcc --version
   - which tex
-  - ls -l $(which tex)
-  - tex --version
-  - which latex
-  - ls -l $(which tex)
-  - latex --version
+  - if which tex; then ls -l $(which tex); fi
+  - tex --version && true
+  - which latex && true
+  - if which latex; then ls -l $(which tex); fi
+  - latex --version && true
   - env
   - mount
   - df -h
   - pwd
-  - qhelpgenerator -qt5
-  - qhelpgenerator -v
   - qhelpgenerator -qt5 -v
-  - qtchooser -list-versions
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then qtchooser -list-versions; fi
