@@ -18,7 +18,7 @@ addons:
     casks:
       # Don't uncomment this unless you want to spend ten extra minutes on
       # every build.
-      - mactex
+      #- mactex
 
 matrix:
   include:
