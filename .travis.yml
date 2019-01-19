@@ -36,6 +36,7 @@ matrix:
       osx_image: xcode10.1
 
 script:
+  - which travis_fold
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew config; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew doctor; true; fi
