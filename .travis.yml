@@ -16,6 +16,7 @@ addons:
       - libjsoncpp-dev
   homebrew:
     packages:
+      - gcc
       # - qt
     casks:
       # Don't uncomment this unless you want to spend ten extra minutes on
@@ -41,6 +42,8 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew config; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew doctor; true; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls gcc; true; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then find $(brew --prefix) -name gfortran; true; fi
   # Don't bother brew updating; takes too long.
   #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - which gcc
