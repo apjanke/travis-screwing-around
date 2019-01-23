@@ -48,6 +48,8 @@ script:
   #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - which gcc
   - gcc --version
+  - which gfortran
+  - gfortran --version
   - which tex; true
   - if which tex; then ls -l $(which tex); fi
   - tex --version; true
