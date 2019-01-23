@@ -51,8 +51,6 @@ script:
   - which latex; true
   - if which latex; then ls -l $(which tex); fi
   - latex --version; true
-  - makeinfo --version
-  - octave --version
   - env
   - mount
   - df -h
@@ -62,4 +60,3 @@ script:
   - qcollectiongenerator -qt5 -v; true
   - qcollectiongenerator -v; true
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then qtchooser -list-versions; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt list libjsoncpp-dev; fi
