@@ -37,8 +37,10 @@ matrix:
       osx_image: xcode10
     - os: osx
       osx_image: xcode10.1
+    - os: windows
 
 script:
+  # macOS specifics
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew config; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew doctor; true; fi
@@ -46,6 +48,7 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then find $(brew --prefix) -name gfortran; true; fi
   # Don't bother brew updating; takes too long.
   #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+  # Windows specifics
   - which gcc
   - gcc --version
   - which gfortran; true
