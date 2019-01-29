@@ -39,7 +39,10 @@ matrix:
       osx_image: xcode10.1
     - os: windows
 
-before_script:
+script:
+  - echo "Hello, world!"
+
+after_script:
   # macOS specifics
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew config; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls; fi
@@ -71,6 +74,3 @@ before_script:
   - qcollectiongenerator -qt5 -v; true
   - qcollectiongenerator -v; true
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then qtchooser -list-versions; fi
-
-script:
-  - echo "Hello, world!"
