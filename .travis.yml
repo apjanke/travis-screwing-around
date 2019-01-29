@@ -49,6 +49,7 @@ script:
   # Don't bother brew updating; takes too long.
   #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - echo "me=$0"
+  - cat "$0"
   - find ~/.bin
   - find ~/bin
   - which gcc
