@@ -48,6 +48,7 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then find $(brew --prefix) -name gfortran; true; fi
   # Don't bother brew updating; takes too long.
   #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+  - echo "me=$0"
   - find ~/.bin
   - find ~/bin
   - which gcc
